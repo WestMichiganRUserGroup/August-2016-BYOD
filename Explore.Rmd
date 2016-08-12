@@ -1,0 +1,36 @@
+---
+title: "R Exploration Notebook"
+output: html_notebook
+---
+
+```{r}
+library(mosaic)
+histogram(~AGE,Drivers_in_FARS2011)
+bwplot(~AGE,Drivers_in_FARS2011)
+```
+
+```{r}
+xtabs(~AGE,Drivers_in_FARS2011)
+```
+
+```{r}
+Drivers_in_FARS2011 <-
+  Drivers_in_FARS2011 %>%
+  mutate(AGE = ifelse(AGE<900,AGE,NA))
+
+Drivers_in_FARS2011 %>%
+  xtabs(~AGE,.)
+histogram(~AGE,Drivers_in_FARS2011)
+bwplot(~AGE,Drivers_in_FARS2011)
+```
+
+```{r}
+Licensed_Drivers_2011[STATE=='Total',c('UNDER','20-24')]
+```
+
+
+```{r}
+Drivers_in_FARS2011 %>%
+  mutate(Age = ifelse(AGE>25,"25 and older","24 and younger")) %>%
+  xtabs(~Age,.)
+```

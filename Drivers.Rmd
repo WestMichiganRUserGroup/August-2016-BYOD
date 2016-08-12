@@ -1,0 +1,31 @@
+---
+title: "Driving Fatalities"
+output: pdf_document
+---
+
+Load the Drivers_in_FARS2011 SPSS data file.
+```{r}
+library(haven)
+library(dplyr)
+Drivers_in_FARS2011 <- read_sav("Drivers_in_FARS2011.sav")
+Drivers_in_FARS2011 <- tbl_df(Drivers_in_FARS2011)
+Drivers_in_FARS2011
+```
+
+Load the NoDrivers_FatalDrivers_Partial SPSS data file.
+```{r}
+NoDrivers_FatalDrivers_Partial <- read_sav("NoDrivers_FatalDrivers_Partial.sav")
+NoDrivers_FatalDrivers_Partial <- tbl_df(NoDrivers_FatalDrivers_Partial)
+NoDrivers_FatalDrivers_Partial
+```
+
+Load the Licensed_Drivers_2011 Excel data file.
+```{r}
+library(readxl)
+Licensed_Drivers_2011 <- read_excel("Licensed_Drivers_2011.xlsx", 
+    na = "empty", skip = 13)
+names(Licensed_Drivers_2011)[is.na(names(Licensed_Drivers_2011))] <- "Blank"
+Licensed_Drivers_2011 <- tbl_df(Licensed_Drivers_2011)
+Licensed_Drivers_2011
+```
+
