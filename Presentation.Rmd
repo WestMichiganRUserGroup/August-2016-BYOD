@@ -1,0 +1,20 @@
+---
+title: "WMRUG BYOD August 2016"
+author: "D. Zeitler"
+date: "August 12, 2016"
+output:
+  ioslides_presentation: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## BYOD instructions
+
+If you have your own data, great! Dive in, share ideas and ask questions. 
+If not, we have a github project with data and some starter code.
+
+https://github.com/WestMichiganRUserGroup/August-2016-BYOD
+
+<img src="Fatalities.png" width="500px" height="300px" />
